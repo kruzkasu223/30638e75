@@ -1,9 +1,8 @@
-import React from "react"
+import React, { useMemo } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Activity } from "./Activity.jsx"
 import { Archive } from "./Archive.jsx"
-
-const pages = [<Activity />, <Archive />]
+import { useActivities } from "./apis"
 
 const variants = {
   enter: (direction) => {
@@ -27,6 +26,16 @@ const variants = {
 }
 
 export const Pages = ({ page, direction }) => {
+  const { data } = useActivities()
+  const activitiesData = useMemo(
+    () => data?.filter((item) => !item.is_archived),
+    [data]
+  )
+  const archivedData = useMemo(
+    () => data?.filter((item) => item.is_archived),
+    [data]
+  )
+
   return (
     <AnimatePresence initial={false} custom={direction}>
       <motion.div
@@ -45,7 +54,11 @@ export const Pages = ({ page, direction }) => {
           padding: "16px",
         }}
       >
-        {pages[page]}
+        {page ? (
+          <Archive data={archivedData} />
+        ) : (
+          <Activity data={activitiesData} />
+        )}
       </motion.div>
     </AnimatePresence>
   )
