@@ -8,8 +8,8 @@
   "license": "",
   "private": false,
   "scripts": {
-    "start": "webpack-dev-server --mode development --open",
-    "build": "webpack --mode production"
+    "start": "NODE_OPTIONS=--openssl-legacy-provider webpack-dev-server --mode development --open",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider webpack --mode production"
   },
   "dependencies": {
     "react": "^16.3.1",
