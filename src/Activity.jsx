@@ -14,6 +14,7 @@ export const Activity = ({ data, archiveCall, archiveAll }) => {
           whileTap={{ scale: 0.9 }}
           className="archive-button"
           onClick={() => archiveAll.mutate()}
+          disabled={archiveAll.isPending || !data?.length}
         >
           <IconArchive size={16} />
           Archive All
