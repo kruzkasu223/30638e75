@@ -1,9 +1,8 @@
 import React, { useState } from "react"
-import ReactDOM from "react-dom"
 import Header from "./Header.jsx"
 import { Footer } from "./Footer.jsx"
 import { Pages } from "./Pages.jsx"
-import { QueryClient, QueryClientProvider } from "react-query"
+import "./css/app.css"
 
 const App = () => {
   const [[page, direction], setPage] = useState([0, 0])
@@ -21,20 +20,5 @@ const App = () => {
     </div>
   )
 }
-
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      refetchOnWindowFocus: false,
-    },
-  },
-})
-
-ReactDOM.render(
-  <QueryClientProvider client={queryClient}>
-    <App />
-  </QueryClientProvider>,
-  document.getElementById("app")
-)
 
 export default App

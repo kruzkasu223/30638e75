@@ -13,23 +13,24 @@
   },
   "dependencies": {
     "@tabler/icons-react": "2.46.0",
-    "framer-motion": "4.1.17",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-query": "^3.39.3"
+    "@tanstack/react-query": "5.17.10",
+    "dayjs": "1.11.10",
+    "framer-motion": "10.18.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
     "@babel/core": "7.23.7",
     "@babel/preset-env": "7.23.8",
     "@babel/preset-react": "7.23.3",
     "babel-core": "7.0.0-bridge.0",
-    "babel-loader": "7.1.*",
-    "css-loader": "2.1.*",
-    "html-loader": "0.5.*",
-    "html-webpack-plugin": "3.2.*",
-    "style-loader": "0.23.*",
-    "webpack": "4.29.*",
-    "webpack-cli": "3.2.*",
-    "webpack-dev-server": "3.1.*"
+    "babel-loader": "9.1.3",
+    "css-loader": "6.9.0",
+    "html-loader": "4.2.0",
+    "html-webpack-plugin": "5.6.0",
+    "style-loader": "3.3.4",
+    "webpack": "5.89.0",
+    "webpack-cli": "5.1.4",
+    "webpack-dev-server": "4.15.1"
   }
 }
