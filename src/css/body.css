@@ -20,3 +20,16 @@ body {
   line-height: 1;
   overflow: hidden;
 }
+
+.customScroll::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.customScroll::-webkit-scrollbar-thumb {
+  background-color: #2bc42080;
+  border-radius: 6px;
+}
+.customScroll {
+  scrollbar-width: auto;
+  scrollbar-color: #2bc42080 transparent;
+}

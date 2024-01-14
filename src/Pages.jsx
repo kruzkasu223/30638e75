@@ -3,6 +3,10 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Activity } from "./Activity.jsx"
 import { Archive } from "./Archive.jsx"
 import { useActivities } from "./apis"
+import { Loader } from "./Loader.jsx"
+import "./css/pages.css"
+import { groupCallData } from "./utils/helpers.js"
+import { Toaster } from "react-hot-toast"
 
 const variants = {
   enter: (direction) => {
@@ -26,40 +30,51 @@ const variants = {
 }
 
 export const Pages = ({ page, direction }) => {
-  const { data } = useActivities()
+  const { activities, archiveCall, archiveAll, unarchiveAll } = useActivities()
   const activitiesData = useMemo(
-    () => data?.filter((item) => !item.is_archived),
-    [data]
+    () => groupCallData(activities?.data?.filter((item) => !item.is_archived)),
+    [activities?.data]
   )
   const archivedData = useMemo(
-    () => data?.filter((item) => item.is_archived),
-    [data]
+    () => groupCallData(activities?.data?.filter((item) => item.is_archived)),
+    [activities?.data]
   )
 
   return (
-    <AnimatePresence initial={false} custom={direction}>
-      <motion.div
-        key={page}
-        custom={direction}
-        variants={variants}
-        initial="enter"
-        animate="center"
-        exit="exit"
-        transition={{
-          x: { type: "spring", stiffness: 300, damping: 30 },
-          opacity: { duration: 0.2 },
-        }}
-        style={{
-          position: "absolute",
-          padding: "16px",
-        }}
-      >
-        {page ? (
-          <Archive data={archivedData} />
-        ) : (
-          <Activity data={activitiesData} />
-        )}
-      </motion.div>
-    </AnimatePresence>
+    <>
+      {!!activities?.isLoading && <Loader />}
+
+      <Toaster position="top-right" reverseOrder={false} />
+
+      <AnimatePresence initial={false} custom={direction}>
+        <motion.div
+          key={page}
+          custom={direction}
+          variants={variants}
+          initial="enter"
+          animate="center"
+          exit="exit"
+          transition={{
+            x: { type: "spring", stiffness: 300, damping: 30 },
+            opacity: { duration: 0.2 },
+          }}
+          className="page-wrapper"
+        >
+          {page ? (
+            <Archive
+              data={archivedData}
+              archiveCall={archiveCall}
+              unarchiveAll={unarchiveAll}
+            />
+          ) : (
+            <Activity
+              data={activitiesData}
+              archiveCall={archiveCall}
+              archiveAll={archiveAll}
+            />
+          )}
+        </motion.div>
+      </AnimatePresence>
+    </>
   )
 }

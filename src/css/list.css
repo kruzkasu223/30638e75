@@ -1,0 +1,48 @@
+.list {
+  height: calc(100% - 16px - 28px);
+  overflow: auto;
+}
+
+.list .data-list-item {
+  list-style: none;
+  margin: 8px 0 16px 0;
+  color: gray;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.list .data-list-item div {
+  flex: 1;
+  height: 2px;
+  border-bottom: 1px dashed rgb(181, 181, 181);
+}
+
+.list .list-item {
+  list-style: none;
+  margin: 8px 0 16px 0;
+  padding: 12px;
+  border: 1px solid rgb(181, 181, 181);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.call-details {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+.call-details .caller {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.call-details .callee {
+  color: gray;
+}

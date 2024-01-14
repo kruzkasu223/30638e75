@@ -1,5 +1,6 @@
 import { IconArchive, IconPhone } from "@tabler/icons-react"
 import React from "react"
+import "./css/footer.css"
 import { motion } from "framer-motion"
 
 export const Footer = ({ paginate, page }) => {

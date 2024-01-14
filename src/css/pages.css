@@ -1,0 +1,38 @@
+.page-wrapper {
+  position: absolute;
+  padding: 16px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.page-title {
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.archive-button {
+  border: none;
+  background-color: #2bc42080;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-size: 14px;
+  line-height: 1;
+  padding: 6px 12px;
+  cursor: pointer;
+}

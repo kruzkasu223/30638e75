@@ -3,6 +3,9 @@ footer {
   box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1);
   display: flex;
   width: 100%;
+  z-index: 1;
+  background-color: white;
+  position: sticky;
 }
 
 footer button {
@@ -40,6 +43,6 @@ footer button span {
 .handle {
   width: calc(calc(100% / 2) - 10px);
   height: 60px;
-  background-color: rgba(43, 196, 32, 0.5);
+  background-color: #2bc42080;
   border-radius: 6px;
 }
