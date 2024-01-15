@@ -1,11 +1,9 @@
 import React, { useMemo } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Activity } from "./Activity.jsx"
-import { Archive } from "./Archive.jsx"
-import { useActivities } from "./apis"
-import { Loader } from "./Loader.jsx"
-import "./css/pages.css"
-import { groupCallData } from "./utils/helpers.js"
+import { Activity, Archive, Loader } from "."
+import { useActivities } from "../apis/index.js"
+import "../css/pages.css"
+import { groupCallData } from "../utils"
 import { Toaster } from "react-hot-toast"
 
 const variants = {

@@ -8,10 +8,9 @@ import {
   IconPhoneIncoming,
   IconPhoneOutgoing,
 } from "@tabler/icons-react"
-import { getCallTitle } from "./utils/helpers"
+import { getCallTitle, DASH } from "../utils"
 import dayjs from "dayjs"
-import { DASH } from "./utils/constants"
-import "./css/list.css"
+import "../css/list.css"
 
 const variantsContainer = {
   hidden: { opacity: 1, scale: 0 },

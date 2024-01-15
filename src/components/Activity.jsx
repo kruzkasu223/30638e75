@@ -1,23 +1,22 @@
 import React from "react"
 import { motion } from "framer-motion"
-import { List } from "./List.jsx"
-import { IconArchiveOff } from "@tabler/icons-react"
-import { Empty } from "./Empty.jsx"
+import { List, Empty } from "."
+import { IconArchive } from "@tabler/icons-react"
 
-export const Archive = ({ data, archiveCall, unarchiveAll }) => {
+export const Activity = ({ data, archiveCall, archiveAll }) => {
   return (
     <div className="page">
       <div className="page-header">
-        <h1 className="page-title">Archive</h1>
+        <h1 className="page-title">Activity</h1>
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           className="archive-button"
-          onClick={() => unarchiveAll.mutate()}
-          disabled={unarchiveAll.isPending || !data?.length}
+          onClick={() => archiveAll.mutate()}
+          disabled={archiveAll.isPending || !data?.length}
         >
-          <IconArchiveOff size={16} />
-          Unarchive All
+          <IconArchive size={16} />
+          Archive All
         </motion.button>
       </div>
 

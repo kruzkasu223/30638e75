@@ -1,5 +1,5 @@
 import { useMutation, useQuery } from "@tanstack/react-query"
-import { fetcher } from "../utils/fetcher.js"
+import { fetcher } from "../utils"
 import toast from "react-hot-toast"
 
 export const useActivities = () => {

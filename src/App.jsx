@@ -1,7 +1,5 @@
 import React, { useState } from "react"
-import Header from "./Header.jsx"
-import { Footer } from "./Footer.jsx"
-import { Pages } from "./Pages.jsx"
+import { Header, Footer, Pages } from "./components"
 import "./css/app.css"
 
 const App = () => {

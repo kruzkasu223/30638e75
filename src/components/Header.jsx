@@ -1,7 +1,7 @@
 import React from "react"
-import "./css/header.css"
+import "../css/header.css"
 
-const Header = () => {
+export const Header = () => {
   return (
     <header>
       <svg
@@ -44,5 +44,3 @@ const Header = () => {
     </header>
   )
 }
-
-export default Header
